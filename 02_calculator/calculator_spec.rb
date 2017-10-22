@@ -73,27 +73,69 @@ describe "sum" do
   end
 end
 
+describe "product" do
+  it "computes the product of an empty array" do
+    expect(product([])).to eq(1)
+  end
+
+  it "computes the product of an array of one number" do
+    expect(product([7])).to eq(7)
+  end
+
+  it "computes the product of an array of two numbers" do
+    expect(product([7,11])).to eq(7 * 11)
+  end
+
+  it "computes the product of an array of many numbers" do
+    expect(product([1,3,5,7,9])).to eq(3 * 5 * 7 * 9)
+  end
+end
+
 # Extra Credit Test-Driving Bonus:
 # once the above tests pass,
 # write tests and code for the following:
 
 describe "#multiply" do
+  it "multiplies zero" do
+    expect(multiply(0,1)).to eq(0)
+  end
 
-  it "multiplies two numbers"
+  it "multiplies even numbers" do
+    expect(multiply(2,3)).to eq(6)
+  end
 
-  it "multiplies several numbers"
-  
+  it "multiplies odd numbers" do
+    expect(multiply(5,7)).to eq(35)
+  end
 end
 
 describe "#power" do
-  it "raises one number to the power of another number"
+  it "reduces numbers to 1" do
+    expect(power(3920,0)).to eq(1)
+  end
+  it "leaves numbers untouched" do
+    expect(power(32,1)).to eq(32)
+  end
+  it "squares numbers" do
+    expect(power(4,2)).to eq(16)
+  end
 end
 
 # http://en.wikipedia.org/wiki/Factorial
 describe "#factorial" do
-  it "computes the factorial of 0"
-  it "computes the factorial of 1"
-  it "computes the factorial of 2"
-  it "computes the factorial of 5"
-  it "computes the factorial of 10"
+  it "computes the factorial of 0" do
+    expect(factorial(0)).to eq(1)
+  end
+  it "computes the factorial of 1" do
+    expect(factorial(1)).to eq(1)
+  end
+  it "computes the factorial of 2" do
+    expect(factorial(2)).to eq(2)
+  end
+  it "computes the factorial of 5" do
+    expect(factorial(5)).to eq(5 * 4 * 3 * 2)
+  end
+  it "computes the factorial of 10" do
+    expect(factorial(10)).to eq(10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2)
+  end
 end
